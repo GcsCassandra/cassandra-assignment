@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layouts :: header}" />
+
+<body>
+
+	<nav th:replace="~{layouts :: NavBar}" />
+
+	<div class="container">
+		<h3> Satellite Scanned Locations </h3>
+		<hr>
+		<!-- Add New Location Button -->
+		<a th:href="@{/location/new}" class="btn btn-primary btn-sm mb-3">
+			Add Location
+		</a>
+		<br></br>
+
+		<table class="table table table-bordered table-stripped">
+			<thead class="thead-dark">
+				<tr>
+					<th> Location (Latitude, Longitude) </th>
+					<th> Location Name </th>
+				</tr>
+			</thead>
+			<tboday>
+				<tr th:each="aLocation : ${locations}">
+					<td th:text="${aLocation.location}" />
+					<td th:text="${aLocation.name}" />
+
+					<td>
+						<a th:href="@{/location/update(locationId=${aLocation.locationId})}"
+							class="btn btn-info btn-sm">
+							Update
+						</a>
+						<a th:href="@{/location/delete(locationId=${aLocation.locationId})}"
+							class="btn btn-danger btn-sm"
+							onClick="if (!(confirm('Are you sure you want to delete this scanned location?'))) return false">
+							Delete
+					</td>
+				</tr>
+			</tboday>
+		</table>
+	</div>
+</body>
+
+</html>

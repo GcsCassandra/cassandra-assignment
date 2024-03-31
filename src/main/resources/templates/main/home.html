@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layouts :: header}" />
+
+<nav th:replace="~{layouts :: NavBar}" />
+
+<body>
+	<div class="container">
+		<h3>Satellite Bird Monitoring Dashboard</h3>
+		<a th:text="${versionNumber}"></a>
+		<hr>
+		<div class="row">
+			<div class="col-md-3">
+				<h4> Scanned Locations </h4>
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th> Scan Location </th>
+							<th> Name </th>
+						</tr>
+					</thead>
+					<tboday>
+						<tr th:each="aLocation : ${locations}">
+							<td th:text="${aLocation.location}" />
+							<td th:text="${aLocation.name}" />
+						</tr>
+					</tboday>
+				</table>
+			</div>
+
+			<div class="col-md-8">
+				<h4> Scanned Birds</h4>
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th> Location </th>
+							<th> Scan Day </th>
+							<th> Species </th>
+							<th> Traits </th>
+						</tr>
+					</thead>
+					<tboday>
+						<tr th:each="aBird : ${birds}">
+							<td th:text="${aBird.location}" />
+							<td th:text="${aBird.scanDay}" />
+							<td th:text="${aBird.birdSpecies}" />
+							<td th:text="${aBird.birdTraits}" />
+						</tr>
+					</tboday>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{layouts :: header}" />
+
+<body>
+
+	<nav th:replace="~{layouts :: NavBar}" />
+
+	<div class="container">
+		<h3> Satellite Scanned Birds </h3>
+		<hr>
+		<!-- Add New Bird Button -->
+		<a th:href="@{/bird/new}" class="btn btn-primary btn-sm mb-3">
+			Add Bird
+		</a>
+		<br></br>
+
+		<table class="table table table-bordered table-stripped">
+			<thead class="thead-dark">
+				<tr>
+					<th> Location (Latitude,Longitude) </th>
+					<th> Scan Day </th>
+					<th> Species </th>
+					<th> Traits </th>
+					<th> Action </th>
+				</tr>
+			</thead>
+			<tboday>
+				<tr th:each="aBird : ${birds}">
+					<td th:text="${aBird.location}" />
+					<td th:text="${aBird.scanDay}" />
+					<td th:text="${aBird.birdSpecies}" />
+					<td th:text="${aBird.birdTraits}" />
+					<td>
+						<a th:href="@{/birds/update(id=${aBird.birdId})}" class="btn btn-info btn-sm">
+							Update
+						</a>
+						<a th:href="@{/birds/delete(id=${aBird.birdId})}" class="btn btn-danger btn-sm"
+							onClick="if (!(confirm('Are you sure you want to delete this scanned bird?'))) return false">
+							Delete
+					</td>
+				</tr>
+			</tboday>
+		</table>
+	</div>
+</body>
+
+</html>
