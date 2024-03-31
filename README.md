@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Cassandra Java Assignment
 
 Hi, and welcome to the Cassandra Java Assignment.
@@ -245,7 +244,3 @@ Satellites require being configured with location information that instructs the
 * Create a RESTful endpoint for satellites to read their scan locations.
 * Create a RESTful endpoint for satellites to persist scan results.
 * Create a RESTful endpoint for the scientists to read the scan results for a specific location on a given day.
-
-
-
->>>>>>> 50cf758128a3d458f7e850e69f3c52ccca4adeda
