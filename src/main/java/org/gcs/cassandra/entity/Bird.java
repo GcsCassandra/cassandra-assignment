@@ -68,5 +68,4 @@ public class Bird implements Serializable {
 		return "Bird [birdId=" + birdId + ", location=" + location + ", scanDay=" + scanDay + ", birdSpecies="
 				+ birdSpecies + ", birdTraits=" + birdTraits + "]";
 	}
-
 }

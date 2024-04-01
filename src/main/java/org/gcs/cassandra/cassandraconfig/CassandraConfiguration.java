@@ -40,5 +40,4 @@ public class CassandraConfiguration extends AbstractCassandraConfiguration {
 	public String[] getEntityBasePackages() {
 		return new String[] { "org.gcs.cassandra.entity" };
 	}
-
 }

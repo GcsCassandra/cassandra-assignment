@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface LocationRepository extends CrudRepository<ScanLocation, UUID>{
 
-	ScanLocation findByLocationId(UUID theId);
+	ScanLocation findByLocationId(UUID theId);	
 	
 }

@@ -16,6 +16,7 @@ public class CassandraJavaAssignmentApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CassandraJavaAssignmentApplication.class, args);
+		
 	}
 
 }

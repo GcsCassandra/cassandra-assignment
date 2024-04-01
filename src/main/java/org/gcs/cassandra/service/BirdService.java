@@ -40,6 +40,7 @@ public class BirdService {
 		List<Bird> birds = (List<Bird>) birdRepo.findAll();
 		String location;
 		String day;
+		
 		for (Bird bird : birds) {
 			location = bird.getLocation();
 			day = bird.getScanDay();

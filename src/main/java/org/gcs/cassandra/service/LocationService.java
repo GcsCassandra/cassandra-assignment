@@ -32,7 +32,6 @@ public class LocationService {
 		List<ScanLocation> scanLocations = (List<ScanLocation>) locationRepo.findAll();
 
 		String location;
-
 		for (ScanLocation loc : scanLocations) {
 			location = loc.getLocation();
 

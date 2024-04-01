@@ -14,13 +14,12 @@
 				<p th:text="#{form.hasErrors}">Error Message</p>
 			</div>
 			<input type="hidden" th:field="${bird.birdId}" />
-					
-			<div class="form-group"
-				th:class="${#fields.hasErrors('location')} ? 'form-group has-error' : 'form-group'">
+
+			<div class="form-group" th:class="${#fields.hasErrors('location')} ? 'form-group has-error' : 'form-group'">
 
 				<div class="col-sm-4">
-				<label>Location:</label>
-				<input type="text" class="form-control" th:field="${bird.location}" th:errorclass="has-error" />
+					<label>Location:</label>
+					<input type="text" class="form-control" th:field="${bird.location}" th:errorclass="has-error" />
 					<span class="help-block">
 						<ul>
 							<li th:each="err : ${#fields.errors('location')}" th:text="${err}" />
@@ -30,7 +29,7 @@
 			</div>
 			<div class="form-group" th:class="${#fields.hasErrors('scanDay')} ? 'form-group has-error' : 'form-group'">
 				<div class="col-sm-4">
-				<label>Scan Day:</label>
+					<label>Scan Day:</label>
 					<input type="text" class="form-control" th:field="${bird.scanDay}" th:errorclass="has-error" />
 					<span class="help-block">
 						<ul>
@@ -42,8 +41,8 @@
 			<div class="form-group"
 				th:class="${#fields.hasErrors('birdSpecies')} ? 'form-group has-error' : 'form-group'">
 				<div class="col-sm-4">
-				<label>Species:</label>
-				<input type="text" class="form-control" th:field="${bird.birdSpecies}" th:errorclass="has-error" />
+					<label>Species:</label>
+					<input type="text" class="form-control" th:field="${bird.birdSpecies}" th:errorclass="has-error" />
 					<span class="help-block">
 						<ul>
 							<li th:each="err : ${#fields.errors('birdSpecies')}" th:text="${err}" />
@@ -54,8 +53,8 @@
 			<div class="form-group"
 				th:class="${#fields.hasErrors('birdTraits')} ? 'form-group has-error' : 'form-group'">
 				<div class="col-sm-8">
-				<label>Traits:</label>
-				<input type="text" class="form-control" th:field="${bird.birdTraits}" th:errorclass="has-error" />
+					<label>Traits:</label>
+					<input type="text" class="form-control" th:field="${bird.birdTraits}" th:errorclass="has-error" />
 					<span class="help-block">
 						<ul>
 							<li th:each="err : ${#fields.errors('birdTraits')}" th:text="${err}" />

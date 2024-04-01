@@ -48,4 +48,5 @@ public class ScanLocation implements Serializable {
 	public String toString() {
 		return "ScanLocation [locationId=" + locationId + ", location=" + location + ", name=" + name + "]";
 	}
+	
 }
