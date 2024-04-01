@@ -92,6 +92,10 @@ Use this file to include your DDL.  Also include any DML that you may have creat
 
 ## Comments on End Points and UI Designed
 
+	- Project was built with Java 17, and Spring Boot 3.2.4.
+	
+	- Project is Maven buildable.
+
     - when the application started (locally), check the following end points
        
        - home page: http://localhost:8080
