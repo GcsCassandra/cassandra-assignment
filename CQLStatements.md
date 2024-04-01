@@ -21,7 +21,7 @@ Use this file to include your DDL.  Also include any DML that you may have creat
    	  	 
    - birds
       
-      create table birds (birdid uuid primary key, location text, scanday text, birdspecies text, birdtraits list<text>,) with comment = 'Scanned birds result';
+      create table birds (birdid uuid primary key, location text, scanday text, birdspecies text, birdtraits list<text>) with comment = 'Scanned birds result';
    	  
    - drop tables
 	  
@@ -30,7 +30,7 @@ Use this file to include your DDL.  Also include any DML that you may have creat
 	  drop table birds;
    	    	
 
-## DML (if any)
+## DML
 
    - populate dummy data into tables
    
@@ -89,5 +89,44 @@ Use this file to include your DDL.  Also include any DML that you may have creat
        truncate locations;
    
        truncate birds;
+
+## Comments on End Points and UI Designed
+
+    - when the application started (locally), check the following end points
+       
+       - home page: http://localhost:8080
+        
+         On the home page, there are clickable button on top for navigation between "Home", "Locations" and "Birds"
+   		
+			- "Home" shows the full list of tabular display of 'Locations' scanned, and birds scanned.
+			
+			- "Locations" shows the list of locations scanned by the satellite, and other functions for modifying and user configure and input new locations, which 
+			  will be recorded in the back-end DB.
+			
+			- "Birds" show the similar functionalities as 'Locations".
+	  - As shown and required by the unit tests, search end points are also designed to fulfill the functionalities; when the unit tests have been run, you should 	
+	    be able to use the following end points to check the results (json format results will be shown on your browser):
+	    
+	    http://localhost:8080/scan/result/location/25N,71W/day/2025-08-17
+	    http://localhost:8080/scan/location/25N,71W
+	  
+	  - Some thoughts:
+	  	
+	  	- The assignment project is just a basic functioning application with back-end database Cassandra, plus a little bit front-end HTML (static) web pages 
+	  	  designed for 	convenience to some degree. However, more consideration about production level development. 
+	  	    		
+	  	- Immediate thoughts would be listed as follows:
+   	  
+		   - multi-node Cassandra DB as back-end data stores;
+		   - security login;
+		   - sophisticated front-end functionalities using javaScripts (e.g., React.js) leading to better data rendering with analytics for certain business 
+		     requirements; 
+		   - others yet not coming to my mind yet.
+		
+		- As for code base itself, there maybe more need on code coverage, and /or other improvements.
+   		  
+   		  
+   
+   
        
        
